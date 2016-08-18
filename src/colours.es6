@@ -162,4 +162,4 @@ for (let key in CODES) {
     }
 }
 
-module.exports = Colours;
+module.exports = Colours();
