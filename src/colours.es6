@@ -68,6 +68,15 @@ Object.defineProperties(Colours.prototype, {
     },
 
     /**
+     * Checks if a given stream is valid for using colour
+     */
+    'isValid': {
+        'value': function(stream) {
+            return !!stream.isTTY;
+        }
+    },
+
+    /**
      * Returns the length, minus all the escape characters added from colouring,
      * giving you the visible length of the string.
      *
