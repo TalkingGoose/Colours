@@ -20,5 +20,24 @@
     "gulp-uglify": "^1.5.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "description": "A package that allows the user to have colourful strings!",
+  "main": "index.js",
+  "bin": {
+    "colours": "colours.js"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalkingGoose/Colours.git"
+  },
+  "author": "Paul Watkinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TalkingGoose/Colours/issues"
+  },
+  "homepage": "https://github.com/TalkingGoose/Colours#readme"
 }
