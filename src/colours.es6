@@ -48,7 +48,7 @@ var Colours = function() {
     }
 };
 
-Object.defineProperties(Colours.prototype, {
+Object.defineProperties(Colours, {
     /**
      * Enables colouring of strings.
      */
@@ -128,25 +128,25 @@ for (let key in CODES) {
         'close': `\u001b[${value[1]}m`
     };
 
-    if (String.prototype[key] == null) {
-        const style = STYLES[key];
+    const style = STYLES[key];
 
-        Object.defineProperty(Colours.prototype, key, {
-            /**
-             * Returns a colour formatted string
-             *
-             * @param {String} str The string to format with colour
-             * @returns {String}
-             */
-            'value': function(str) {
-                if (!isEnabled) {
-                    return str;
-                }
-
-                return style.open + str + style.close;
+    Object.defineProperty(Colours, key, {
+        /**
+         * Returns a colour formatted string
+         *
+         * @param {String} str The string to format with colour
+         * @returns {String}
+         */
+        'value': function(str) {
+            if (!isEnabled) {
+                return str;
             }
-        });
 
+            return style.open + str + style.close;
+        }
+    });
+
+    if (String.prototype[key] == null) {
         Object.defineProperty(String.prototype, key, {
             /**
              * @returns {String} The string, surrounded in the required colour markers
@@ -162,4 +162,4 @@ for (let key in CODES) {
     }
 }
 
-module.exports = Colours();
+module.exports = Colours;
