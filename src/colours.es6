@@ -72,7 +72,7 @@ Object.defineProperties(Colours, {
      */
     'isValid': {
         'value': function(stream) {
-            return !!stream.isTTY;
+            return (stream && !!stream.isTTY);
         }
     },
 
